@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 const todoSchema = new mongoose.Schema({
     //Each line represents a field (document); 'required; means that field is required, 'unique' means that field cannot have repeated values and 'trim' removes spaces 
-    title:{required: true, type: String, unique:true, trim:true},
+    title:{required: true, type: String, trim:true},
     description:{type: String, required: false}
 });
 
