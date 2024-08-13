@@ -24,3 +24,26 @@ export const getAllTodo = () => {
         console.log(err)
     })
 }
+
+export const updateTodoById = (id, body) => {
+    return fetch(`${ENDPOINT_URL}/update-todo-by-id/${id}`, {
+        method: 'PATCH',
+        headers: {Accept: 'application/json', 'Content-type': 'application/json'},
+        body: JSON.stringify(body)
+    }).then((res)=>{
+        return res.json()
+    }).catch((err)=>{
+        console.log(err)
+    })
+}
+
+export const deleteTodoById = (id) => {
+    return fetch(`${ENDPOINT_URL}/delete-todo/${id}`, {
+        method: 'DELETE',
+        headers: {Accept: 'application/json', 'Content-type': 'application/json'},
+    }).then((res)=>{
+        return res.json()
+    }).catch((err)=>{
+        console.log(err)
+    })
+}
